@@ -73,8 +73,8 @@ In my input.txt file I have 4 testcases, the first contains 20 fixation points, 
 The second has the high values of x and y coordinate and also it test the duplications, the third test case has the similar x and y coordinate,
 for teting our program and the last test the program with many fixation points arround 999 including the several duplicates.
 
-Complexity analysis
--------------------
+Complexity analysis of function called eyeTracker() which is for whole program
+------------------------------------------------------------------------------
 - Outer loop complexity: O(test_case)
 - Inner loop complexity:
     Let n be the total number of fixation points across all test cases.
@@ -149,6 +149,7 @@ int eyeTracker() {
     outputFile << "oirakoze" << endl;
 
     // Outer loop for each test case
+    // The complexity of O(test_case), and overall of O(test_case * n) 
     for (int caseNum = 0; caseNum < test_case; ++caseNum) {
         
         // Assumed size array to store fixation points
@@ -160,7 +161,7 @@ int eyeTracker() {
         // Counter for generating new identifiers
         int newId = 1;
 
-        // Inner loop to read data for each test case
+        // Inner loop to read data for each test case with the complexity of O(n)
         while (inputFile >> id >> x >> y) {
             // Check for termination condition
             if (x < 0 && y < 0)
@@ -172,6 +173,8 @@ int eyeTracker() {
             // Check for duplicate in the hash table
             Data* current = hashTable[hashValue];
             bool isUnique = true;
+
+            // The loop for hash table insertion and duplicate checking with complexity of O(1)
             while (current != nullptr) {
                 if (current->x_coordinate == x && current->y_coordinate == y) {
                     isUnique = false;
