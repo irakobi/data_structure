@@ -11,7 +11,7 @@ find_package(PkgConfig REQUIRED)
 file(GLOB_RECURSE ASSIGNMENT1_src
     "src/*.cpp"
     "src/*/*.cpp"
-    "src/*.h"
+    # "src/*.h"
 )
 
 # Create the executable

@@ -93,122 +93,126 @@ Overall Complexity: Considering the outer loop and all the inner operations, the
 
 using namespace std;
 
-// Define a structure to hold the data for each input line and the pointer to handle collisions as duplicates
-struct Data {
-    int identifier;
-    int x_coordinate;
-    int y_coordinate;
-    Data* next; 
+struct coordinate {
+    int index;
+    int x_coor;
+    int y_coor;
 };
 
-// Define the size of the hash table assuming to be 1000
-const int HASH_TABLE_SIZE = 1000;
+void merge(coordinate arr[], int l, int mid, int r) {
+    int n1 = mid - l + 1;
+    int n2 = r - mid;
 
-// Define a hash function to compute the hash value
-int hashFunction(int x, int y) {
-    return (x * HASH_TABLE_SIZE + y) % HASH_TABLE_SIZE;
+    // Create temporary arrays
+    coordinate L[n1], R[n2];
+
+    // Copy data to temporary arrays L[] and R[]
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    // Merge the temporary arrays back into arr[l..r]
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        // Compare first by x-coordinate, then by y-coordinate, and finally by index
+        if (L[i].x_coor < R[j].x_coor || (L[i].x_coor == R[j].x_coor && L[i].y_coor < R[j].y_coor) || (L[i].x_coor == R[j].x_coor && L[i].y_coor == R[j].y_coor && L[i].index < R[j].index)) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy the remaining elements of L[], if any
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Copy the remaining elements of R[], if any
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
-int eyeTracker() {
-    /*
-    The function to process the input file and handle the duplicates and arrange new fixation points
-    separated into different test cases wit the star line.
+void mergeSort(coordinate arr[], int l, int r) {
+    if (l < r) {
+        int mid = l + (r - l) / 2;
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
+        merge(arr, l, mid, r);
+    }
+}
 
-    input: .txt file
-    output: .txt file
+int main(){
+    // eyeTracker();
 
-    parameter: struct data(linked array to store coordinates)
-
-    function calling: hashFunction()
-    */
-
-    ifstream inputFile("../data/input.txt"); // Open input.txt file
+    std::ifstream inputFile("../data/input.txt");
     if (!inputFile) {
-        cout << "Error opening input file!" << endl;
-        return 1;
-    }
-    // Read the first line (test_case)
-    int test_case;
-    inputFile >> test_case;
-
-    // Validate test_case
-    if (test_case < 1 || test_case > 10) {
-        cout << "Invalid test_case value. It should be between 1 and 10." << endl;
+        std::cout << "Failed to open input.txt\n";
         return 1;
     }
 
-    // Open the output file
-    ofstream outputFile("../data/output.txt");
+    int scanpath;
+    if (!(inputFile >> scanpath)) {
+        std::cout << "Failed to read scanpath number from input.txt\n";
+        return 1;
+    }
 
+
+    // Validate scanpath
+    if (scanpath < 1 || scanpath > 10) {
+        std::cout << "Invalid scanpath value. It should be between 1 and 10." << endl;
+        return 1;
+    }
+
+    std::ofstream outputFile("../data/output.txt");
     if (!outputFile) {
-        cout << "Error opening output file!" << endl;
+        std::cout << "Failed to create output.txt\n";
         return 1;
     }
 
     // printing my andrewId as first row in output file
     outputFile << "oirakoze" << endl;
 
-    // Outer loop for each test case
-    // The complexity of O(test_case), and overall of O(test_case * n) 
-    for (int caseNum = 0; caseNum < test_case; ++caseNum) {
+    coordinate arr[1000]; // Assuming a maximum of 1000 points
+    int idx = 0;
+
+    // the tempory variable to hold the points
+    int index, x, y;
+
+    while (inputFile >> index >> x >> y) {
         
-        // Assumed size array to store fixation points
-        Data* hashTable[HASH_TABLE_SIZE] = {nullptr}; // Initialize hash table
 
-        // Temporary variables to hold values while reading
-        int id, x, y;
-
-        // Counter for generating new identifiers
-        int newId = 1;
-
-        // Inner loop to read data for each test case with the complexity of O(n)
-        while (inputFile >> id >> x >> y) {
-            // Check for termination condition
-            if (x < 0 && y < 0)
-                break;
-
-            // Compute hash value
-            int hashValue = hashFunction(x, y);
-
-            // Check for duplicate in the hash table
-            Data* current = hashTable[hashValue];
-            bool isUnique = true;
-
-            // The loop for hash table insertion and duplicate checking with complexity of O(1)
-            while (current != nullptr) {
-                if (current->x_coordinate == x && current->y_coordinate == y) {
-                    isUnique = false;
-                    break;
-                }
-                current = current->next;
+        if (x == -1 && y == -1) {
+            // End of scan path, sort and print the previous scan path
+            if (idx > 0) {
+                mergeSort(arr, 0, idx - 1);
+                for (int i = 0; i < idx; ++i)
+                    outputFile << arr[i].index << " " << arr[i].x_coor << " " << arr[i].y_coor << std::endl;
+                idx = 0;
+                outputFile << "*************" << std::endl;
             }
+            continue;
+        } 
 
-            // If not a duplicate, insert into hash table and write to output file
-            if (isUnique) {
-                outputFile << newId << " " << x << " " << y << endl;
+        // Assign values to the coordinate structure
+        arr[idx].index = index;
+        arr[idx].x_coor = x;
+        arr[idx].y_coor = y;
+        idx++;
+    }  
 
-                // Create a new data node
-                Data* newData = new Data;
-                newData->identifier = id;
-                newData->x_coordinate = x;
-                newData->y_coordinate = y;
-                newData->next = hashTable[hashValue];
-
-                // Update hash table
-                hashTable[hashValue] = newData;
-                // Increment newId for the next fixation point
-                newId++;
-            }
-        }
-        // Print separator line after each test case
-        outputFile << "*************" << endl;
-    }
-
-    // Close the files
     inputFile.close();
     outputFile.close();
-    // The success message
-    cout << "Data written to output.txt" << endl;
 
     return 0;
+    
 }
+
