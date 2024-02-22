@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/src/oirakoze/assignment1.cpp" "CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/assignment1.cpp.o" "gcc" "CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/assignment1.cpp.o.d"
-  "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/src/oirakoze/main.cpp" "CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/main.cpp.o" "gcc" "CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/main.cpp.o.d"
+  "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/src/oirakoze/assignment2.cpp" "CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/assignment2.cpp.o" "gcc" "CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/assignment2.cpp.o.d"
+  "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/src/oirakoze/main.cpp" "CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/main.cpp.o" "gcc" "CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,3 +1,3 @@
-/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build/CMakeFiles/ASSIGNMENT1.dir
-/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build/CMakeFiles/edit_cache.dir
-/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build/CMakeFiles/rebuild_cache.dir
+/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build/CMakeFiles/ASSIGNMENT2.dir
+/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build/CMakeFiles/edit_cache.dir
+/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build/CMakeFiles/rebuild_cache.dir

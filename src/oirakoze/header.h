@@ -1,7 +1,14 @@
-// #ifndef ASSIGNMENT1_SRC_OIRAKOZE_H
-// #define ASSIGNMENT1_SRC_OIRAKOZE_H
-// // int eyeTracker();
-// void mergeSort();
-// void merge();
+#ifndef ASSIGNMENT2_SRC_OIRAKOZE_H
+#define ASSIGNMENT2_SRC_OIRAKOZE_H
 
-// #endif
+struct coordinate {
+    int index;
+    int x_coor;
+    int y_coor;
+};
+using namespace std;
+
+void mergeSort(coordinate array[], int left_index, int right_index);
+void merge(coordinate array[], int left_index, int middle_index, int right_index);
+
+#endif

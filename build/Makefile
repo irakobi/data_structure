@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.28.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1"
+CMAKE_SOURCE_DIR = "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build"
+CMAKE_BINARY_DIR = "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build/CMakeFiles" "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build/CMakeFiles" "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT1/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/obed/Desktop/cmu/daata structure/ASSIGNMENT2/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -117,48 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ASSIGNMENT1
+# Target rules for targets named ASSIGNMENT2
 
 # Build rule for target.
-ASSIGNMENT1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ASSIGNMENT1
-.PHONY : ASSIGNMENT1
+ASSIGNMENT2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ASSIGNMENT2
+.PHONY : ASSIGNMENT2
 
 # fast build rule for target.
-ASSIGNMENT1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/build
-.PHONY : ASSIGNMENT1/fast
+ASSIGNMENT2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/build
+.PHONY : ASSIGNMENT2/fast
 
-src/oirakoze/assignment1.o: src/oirakoze/assignment1.cpp.o
-.PHONY : src/oirakoze/assignment1.o
+src/oirakoze/assignment2.o: src/oirakoze/assignment2.cpp.o
+.PHONY : src/oirakoze/assignment2.o
 
 # target to build an object file
-src/oirakoze/assignment1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/assignment1.cpp.o
-.PHONY : src/oirakoze/assignment1.cpp.o
+src/oirakoze/assignment2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/assignment2.cpp.o
+.PHONY : src/oirakoze/assignment2.cpp.o
 
-src/oirakoze/assignment1.i: src/oirakoze/assignment1.cpp.i
-.PHONY : src/oirakoze/assignment1.i
+src/oirakoze/assignment2.i: src/oirakoze/assignment2.cpp.i
+.PHONY : src/oirakoze/assignment2.i
 
 # target to preprocess a source file
-src/oirakoze/assignment1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/assignment1.cpp.i
-.PHONY : src/oirakoze/assignment1.cpp.i
+src/oirakoze/assignment2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/assignment2.cpp.i
+.PHONY : src/oirakoze/assignment2.cpp.i
 
-src/oirakoze/assignment1.s: src/oirakoze/assignment1.cpp.s
-.PHONY : src/oirakoze/assignment1.s
+src/oirakoze/assignment2.s: src/oirakoze/assignment2.cpp.s
+.PHONY : src/oirakoze/assignment2.s
 
 # target to generate assembly for a file
-src/oirakoze/assignment1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/assignment1.cpp.s
-.PHONY : src/oirakoze/assignment1.cpp.s
+src/oirakoze/assignment2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/assignment2.cpp.s
+.PHONY : src/oirakoze/assignment2.cpp.s
 
 src/oirakoze/main.o: src/oirakoze/main.cpp.o
 .PHONY : src/oirakoze/main.o
 
 # target to build an object file
 src/oirakoze/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/main.cpp.o
 .PHONY : src/oirakoze/main.cpp.o
 
 src/oirakoze/main.i: src/oirakoze/main.cpp.i
@@ -166,7 +166,7 @@ src/oirakoze/main.i: src/oirakoze/main.cpp.i
 
 # target to preprocess a source file
 src/oirakoze/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/main.cpp.i
 .PHONY : src/oirakoze/main.cpp.i
 
 src/oirakoze/main.s: src/oirakoze/main.cpp.s
@@ -174,7 +174,7 @@ src/oirakoze/main.s: src/oirakoze/main.cpp.s
 
 # target to generate assembly for a file
 src/oirakoze/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT1.dir/build.make CMakeFiles/ASSIGNMENT1.dir/src/oirakoze/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ASSIGNMENT2.dir/build.make CMakeFiles/ASSIGNMENT2.dir/src/oirakoze/main.cpp.s
 .PHONY : src/oirakoze/main.cpp.s
 
 # Help Target
@@ -185,10 +185,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ASSIGNMENT1"
-	@echo "... src/oirakoze/assignment1.o"
-	@echo "... src/oirakoze/assignment1.i"
-	@echo "... src/oirakoze/assignment1.s"
+	@echo "... ASSIGNMENT2"
+	@echo "... src/oirakoze/assignment2.o"
+	@echo "... src/oirakoze/assignment2.i"
+	@echo "... src/oirakoze/assignment2.s"
 	@echo "... src/oirakoze/main.o"
 	@echo "... src/oirakoze/main.i"
 	@echo "... src/oirakoze/main.s"
